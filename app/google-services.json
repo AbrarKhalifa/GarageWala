@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "320129032122",
+    "project_id": "indstar-ee027",
+    "storage_bucket": "indstar-ee027.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320129032122:android:7d4bd39c751bfd27b6c783",
+        "android_client_info": {
+          "package_name": "com.abrarkhalifa.indstar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320129032122-cttl745dv9od1o4mgsl8uc00mv6b6cpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcyE6x5BcigvWjJA72KvPu-cBSLZ_zhzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320129032122-cttl745dv9od1o4mgsl8uc00mv6b6cpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

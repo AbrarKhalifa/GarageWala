@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFC107"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentss.profile">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_profile"
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        app:menu="@menu/settings_menu"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/toolbar_profile_textUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25sp"
+            android:text="Login username"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_profile"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_userimage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/signup_img_profile"
+                app:civ_border_color="@color/black">
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <Button
+                android:id="@+id/editprofile"
+                android:layout_width="wrap_content"
+                android:text="Edit Profile"
+                android:textColor="#0725CC"
+                android:textSize="15sp"
+                android:layout_marginTop="50dp"
+                android:background="@color/transparent"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/text"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/profileShowUsername"
+                android:layout_width="wrap_content"
+                android:text="login username"
+                android:layout_marginLeft="45sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/profileShowDescription"
+                android:layout_width="wrap_content"
+                android:text="hey this is a indstar who made in india and made by abrar so he is very gentelman guy"
+                android:layout_margin="20sp"
+                android:textSize="20sp"
+                android:inputType="textMultiLine"
+                android:layout_height="wrap_content"
+                tools:ignore="TextViewEdits">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
