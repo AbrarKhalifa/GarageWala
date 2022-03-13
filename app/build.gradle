@@ -51,8 +51,10 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
-
     implementation 'com.orhanobut:dialogplus:1.11@aar'
+
+    implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.4.1'
 
 
 

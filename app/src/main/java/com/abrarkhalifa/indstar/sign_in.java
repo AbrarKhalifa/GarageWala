@@ -49,7 +49,7 @@ public class sign_in extends AppCompatActivity implements View.OnClickListener {
         database = FirebaseDatabase.getInstance();
         binding.dontacc.setOnClickListener(this);
         binding.googleSignin.setOnClickListener(this);
-        binding.facebookSignin.setOnClickListener(this);
+
 
 
         binding.signin.setOnClickListener(new View.OnClickListener() {
@@ -117,16 +117,11 @@ public class sign_in extends AppCompatActivity implements View.OnClickListener {
             case R.id.google_signin:
                 signIn();
                 break;
-            case R.id.facebook_signin:
-                facebookSignin();
-                break;
+
         }
 
     }
 
-    private void facebookSignin() {
-
-    }
 
 
     // google signin code

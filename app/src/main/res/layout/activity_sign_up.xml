@@ -100,7 +100,7 @@
         app:cornerRadius="20dp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -112,19 +112,6 @@
             style="@style/button"
             android:text="google"
             android:textColor="#267808"
-            app:cornerRadius="40dp" />
-
-        <Button
-            android:id="@+id/facebook_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_weight="1"
-            android:backgroundTint="#FFFFFF"
-            android:drawableLeft="@drawable/ic_facebook_image"
-            android:text="facebook"
-            android:textColor="#1442C3"
-            android:textSize="15sp"
             app:cornerRadius="40dp" />
 
     </LinearLayout>
