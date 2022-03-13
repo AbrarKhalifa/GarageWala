@@ -51,16 +51,6 @@ public class sign_in extends AppCompatActivity implements View.OnClickListener {
         binding.googleSignin.setOnClickListener(this);
         binding.facebookSignin.setOnClickListener(this);
 
-        // facebook code
-
-
-
-
-        // If you are using in a fragment, call loginButton.setFragment(this);
-
-        // Callback registration
-
-
 
         binding.signin.setOnClickListener(new View.OnClickListener() {
             @Override
