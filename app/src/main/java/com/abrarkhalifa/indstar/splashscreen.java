@@ -29,17 +29,13 @@ public class splashscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Objects.requireNonNull(getSupportActionBar()).hide();
         binding = ActivitySplashscreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         auth = FirebaseAuth.getInstance();
 
         fadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.main_logo_trans);
-        Animation camra = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.recorder);
         binding.mainLogo.startAnimation(fadein);
-        binding.logoCamra.startAnimation(camra);
         binding.tv.startAnimation(fadein);
-
 
 
         new Handler().postDelayed(new Runnable() {
@@ -54,7 +50,7 @@ public class splashscreen extends AppCompatActivity {
                 }
                 finish();
             }
-        },6000);
+        },7000);
 
 
 

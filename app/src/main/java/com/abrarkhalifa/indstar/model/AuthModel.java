@@ -1,4 +1,4 @@
-package com.abrarkhalifa.indstar;
+package com.abrarkhalifa.indstar.model;
 
 public class AuthModel {
     String  username,email,password,imageuri,userid;

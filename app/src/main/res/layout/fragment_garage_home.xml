@@ -3,17 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A68D8D"
-    android:backgroundTint="#DFB9B9"
+    android:background="#FFFFFF"
+    android:backgroundTint="#959AB8"
     tools:context=".fragmentes.garage_home">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center|center_horizontal"
-        android:text="Garages Here"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

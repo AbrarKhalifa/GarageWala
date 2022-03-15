@@ -33,6 +33,8 @@ public class ForgotActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), sign_in.class));
+                finish();
+
             }
         });
 

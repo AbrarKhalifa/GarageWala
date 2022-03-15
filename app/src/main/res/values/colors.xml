@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange_splash">#FF9800</color>
     <color name="transparent">#00000000</color>
+
+
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#96979b</color>
+    <color name="color_background">#000</color>
+    <color name="color_desire_front">#96979b</color>
+    <color name="color_desire_font">#96979b</color>
 </resources>

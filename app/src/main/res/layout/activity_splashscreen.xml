@@ -5,43 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:backgroundTint="@color/orange_splash"
+    android:backgroundTint="@color/black"
     tools:context=".splashscreen">
-
-    <ImageView
-        android:id="@+id/mainLogo"
-        android:layout_width="450dp"
-        android:layout_height="500dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437"
-        app:srcCompat="@drawable/indstarlogo" />
-
-    <ImageView
-        android:id="@+id/wave"
-        android:layout_width="750dp"
-        android:layout_height="573dp"
-        android:layout_marginTop="368dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.601"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/orange_wave" />
-
-    <ImageView
-        android:id="@+id/logo_camra"
-        android:layout_width="124dp"
-        android:layout_height="99dp"
-        android:backgroundTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365"
-        app:srcCompat="@drawable/ic_logo_camera" />
 
     <TextView
         android:id="@+id/tv"
@@ -49,12 +14,27 @@
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
         android:gravity="center_horizontal"
-        android:text="The Indian Youth App"
+        android:text="By Group Of Ak"
+        android:textColor="#A89A9A"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintVertical_bias="0.835" />
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="669dp"
+        android:layout_height="536dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="152dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/garagewala_logo_foreground" />
 </androidx.constraintlayout.widget.ConstraintLayout>

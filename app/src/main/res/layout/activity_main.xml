@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LastLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:id="@+id/drawer"
+    tools:openDrawer="start"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_border"
+        app:titleTextColor="@color/color_desire_font">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/toolbarLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_gravity="right"
+            android:layout_marginRight="20sp"
+            android:src="@drawable/garagewala_logo_foreground"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <FrameLayout
-        android:id="@+id/frame_layout"
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
@@ -29,3 +59,24 @@
 
 
 </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/iconmenu"
+        app:headerLayout="@layout/nav_header"
+        android:layout_gravity="start">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="20dp"
+            android:text="version 1.0.0.14" />
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+

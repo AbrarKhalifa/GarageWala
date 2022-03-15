@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange_splash"
-    android:backgroundTint="@color/orange_splash"
+    android:background="#111947"
+    android:backgroundTint="#1D1F2B"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".sign_in">
@@ -14,12 +14,12 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="#B5A0A0"
         android:layout_marginTop="160dp"
         android:layout_marginBottom="50dp"
         android:fontFamily="sans-serif-smallcaps"
         android:textSize="20dp"
-        android:text="Sign In Into Your Account" />
+        android:text="Sign In Karo" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.AppCompat.Button.Borderless"
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="forgot password?"
-        android:textColor="@color/black"
+        android:textColor="#B5A0A0"
         android:fontFamily="sans-serif-smallcaps"
 
         android:layout_gravity="right"
@@ -89,7 +89,7 @@
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
         android:text="SIGN IN"
-        android:textColor="#FFC107"
+        android:textColor="#1D1F2B"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="20dp" />
@@ -127,7 +127,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:gravity="center_horizontal"
             android:text="Don't Have An Account? "
-            android:textColor="@color/black"
+            android:textColor="#B5A0A0"
             android:textSize="16sp" />
 
         <TextView

@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">INDSTAR</string>
+    <string name="app_name">GarageWala</string>
     <string name="username">enter your name</string>
     <string name="email_address">email address</string>
     <string name="password">password</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 
     <string name="facebook_app_id">1234</string>
     <string name="fb_login_protocol_scheme">fb1234</string>

@@ -6,19 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.webkit.MimeTypeMap;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.abrarkhalifa.indstar.databinding.ActivitySignUpBinding;
+import com.abrarkhalifa.indstar.model.AuthModel;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -36,7 +33,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.karumi.dexter.Dexter;
@@ -46,7 +42,6 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-import java.io.InputStream;
 import java.util.Objects;
 
 public class sign_up extends AppCompatActivity implements View.OnClickListener {
@@ -56,7 +51,7 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseStorage firebaseStorage;
-    FirebaseDatabase database;
+
     StorageReference storageReference;
     GoogleSignInClient mGoogleSignInClient;
 
@@ -66,13 +61,11 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Objects.requireNonNull(getSupportActionBar()).hide();
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         auth = FirebaseAuth.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
-        database = FirebaseDatabase.getInstance();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
@@ -222,7 +215,10 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
 
 
         }else {
-            Toast.makeText(this, "fill all the details", Toast.LENGTH_SHORT).show();
+           binding.usernameSignup.setError("required!");
+           binding.emailSignup.setError("required!");
+           binding.passwordSignup.setError("required!");
+
         }
 
     }
@@ -276,7 +272,7 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
                             users.setUsername(user.getDisplayName());
                             users.setEmail(user.getEmail());
                             users.setImageuri(user.getPhotoUrl().toString());
-                            database.getReference().child("Users").child(user.getUid()).setValue(users);
+                            firebaseDatabase.getReference().child("Users").child(user.getUid()).setValue(users);
 
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                             finish();

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.abrarkhalifa.indstar.databinding.ActivitySignInBinding;
 
+import com.abrarkhalifa.indstar.model.AuthModel;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -41,7 +42,7 @@ public class sign_in extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Objects.requireNonNull(getSupportActionBar()).hide();
+
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -66,6 +67,7 @@ public class sign_in extends AppCompatActivity implements View.OnClickListener {
                                 binding.progressbarSignin.setVisibility(View.INVISIBLE);
                                 Toast.makeText(sign_in.this, "Sign in Successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                finish();
 
                             }
 
@@ -78,6 +80,10 @@ public class sign_in extends AppCompatActivity implements View.OnClickListener {
 
                         }
                     });
+                }else {
+                    binding.emailSignin.setError("required!");
+                    binding.passwordSignin.setError("required!");
+
                 }
             }
         });
