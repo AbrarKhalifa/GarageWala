@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <item android:id="@+id/myAccount"
+        android:icon="@drawable/account_detail"
+        android:title="My Account"
+
+        />
+    <item android:id="@+id/payment"
+        android:icon="@drawable/payment"
+        android:title="Payment Options"
+
+        />
+    <item android:id="@+id/share"
+        android:icon="@drawable/share"
+        android:title="Share With Others"
+
+        />
+    <item android:id="@+id/help"
+        android:icon="@drawable/help_support"
+        android:title="Help and Supports"
+
+        />
+    <item android:id="@+id/Logout"
+        android:icon="@drawable/logout"
+        android:title="Log Out"
+
+        />
+</menu>

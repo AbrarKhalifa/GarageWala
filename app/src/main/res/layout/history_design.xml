@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="15dp"
+    android:background="@color/transparent"
+    android:backgroundTint="#EE132175"
+    android:elevation="30sp"
+    android:orientation="horizontal"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="20sp">
+
+    <ImageView
+        android:id="@+id/imgMerchantHistory"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+
+        app:srcCompat="@drawable/signup_img_profile" />
+
+
+    <TextView
+        android:id="@+id/garageNameHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="90dp"
+        android:text="Abrar Services"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="140dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/strOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_rating_ful" />
+
+        <ImageView
+            android:id="@+id/strTwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_rating_ful" />
+
+        <ImageView
+            android:id="@+id/strThree"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_rating_ful" />
+
+        <ImageView
+            android:id="@+id/strFour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_rating_ful" />
+
+        <ImageView
+            android:id="@+id/strFive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_rating" />
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="240dp"
+        android:orientation="vertical"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="#454343"
+        android:layout_width="match_parent"
+        android:layout_height="230dp">
+
+        <TextView
+            android:id="@+id/serviceHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40sp"
+            android:text="Services"
+            android:textColor="#D32F2F"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="210dp"
+          android:layout_height="200dp">
+          <TextView
+              android:id="@+id/serviceOneNameHistory"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:layout_marginLeft="5dp"
+              android:text="1.Carborator Cleaning"
+              android:textColor="#FFFFFF"
+              android:textSize="20sp"
+              android:textStyle="bold" />
+
+          <TextView
+              android:id="@+id/serviceTwoNameHistory"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="5dp"
+
+              android:text="2.Oiling"
+              android:textColor="#FFFFFF"
+              android:textSize="20sp"
+              android:layout_marginTop="20sp"
+              android:textStyle="bold" />
+
+          <TextView
+              android:id="@+id/serviceThreeNameHistory"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+              android:text="3.Chain Spray"
+              android:layout_marginLeft="5dp"
+
+              android:textColor="#FFFFFF"
+              android:textSize="20sp"
+              android:textStyle="bold" />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="240dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/priceHistory"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textColor="#D32F2F"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/servicePriceOneHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="450"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/servicePriceTwoHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="100"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/servicePriceThreeHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="110"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="430dp"
+            android:layout_marginBottom="20sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bycashHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By Cash"
+                android:textColor="#1FA5FF"
+                android:textSize="24sp"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalPriceHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:text="660"
+                android:textColor="#1FA5FF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
