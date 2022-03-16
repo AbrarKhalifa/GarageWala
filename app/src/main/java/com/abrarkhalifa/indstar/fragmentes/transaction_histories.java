@@ -10,9 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.abrarkhalifa.indstar.Adaptereres.homeAdapter;
 import com.abrarkhalifa.indstar.R;
-import com.abrarkhalifa.indstar.historyAdapter;
+import com.abrarkhalifa.indstar.Adaptereres.historyAdapter;
 import com.abrarkhalifa.indstar.model.DataModelHistory;
 
 import java.util.ArrayList;

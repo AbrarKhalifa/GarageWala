@@ -1,4 +1,4 @@
-package com.abrarkhalifa.indstar;
+package com.abrarkhalifa.indstar.Adaptereres;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abrarkhalifa.indstar.R;
 import com.abrarkhalifa.indstar.model.DataModelHistory;
 
 import java.util.ArrayList;
