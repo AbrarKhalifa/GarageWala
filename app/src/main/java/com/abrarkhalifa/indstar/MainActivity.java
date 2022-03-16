@@ -12,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -169,14 +170,16 @@ public class MainActivity extends AppCompatActivity {
         database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ImageView img = findViewById(R.id.profileImage);
-                TextView tv = findViewById(R.id.username_draw);
+
+                View headerView = nav.getHeaderView(0);
+                ImageView img = headerView.findViewById(R.id.profileImage);
+                TextView tv = (TextView) headerView.findViewById(R.id.username);
 
                 String usr = tv.toString();
                 Users users  = snapshot.getValue(Users.class);
                 Picasso.get()
                         .load(users.getProfilePic())
-                        .placeholder(R.drawable.users_profile)
+                        .placeholder(R.drawable.ic_male_user)
                         .into(img);
 
                 HashMap<String, Object> obj = new HashMap<>();

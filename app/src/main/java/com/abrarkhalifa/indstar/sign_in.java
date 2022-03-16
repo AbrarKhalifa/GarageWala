@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.abrarkhalifa.indstar.databinding.ActivitySignInBinding;
 
-import com.abrarkhalifa.indstar.model.AuthModel;
+import com.abrarkhalifa.indstar.model.Users;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -26,9 +26,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.FirebaseDatabase;
-
-
-import java.util.Objects;
 
 public class sign_in extends AppCompatActivity implements View.OnClickListener {
     ActivitySignInBinding binding;
@@ -165,11 +162,11 @@ public class sign_in extends AppCompatActivity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = auth.getCurrentUser();
-                            AuthModel users = new AuthModel();
-                            users.setUserid(user.getUid());
-                            users.setUsername(user.getDisplayName());
+                            Users users = new Users();
+                            users.setUserId(user.getUid());
+                            users.setUserName(user.getDisplayName());
                             users.setEmail(user.getEmail());
-                            users.setImageuri(user.getPhotoUrl().toString());
+                            users.setProfilePic(user.getPhotoUrl().toString());
                             database.getReference().child("Users").child(user.getUid()).setValue(users);
 
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));

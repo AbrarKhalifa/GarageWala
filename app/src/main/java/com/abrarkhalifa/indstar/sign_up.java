@@ -15,7 +15,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
 import com.abrarkhalifa.indstar.databinding.ActivitySignUpBinding;
-import com.abrarkhalifa.indstar.model.AuthModel;
+import com.abrarkhalifa.indstar.model.Users;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -41,8 +41,6 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
-
-import java.util.Objects;
 
 public class sign_up extends AppCompatActivity implements View.OnClickListener {
     ActivitySignUpBinding binding;
@@ -174,11 +172,11 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        AuthModel model = new AuthModel();
-                        model.setUsername(username);
+                        Users model = new Users();
+                        model.setUserName(username);
                         model.setEmail(email);
                         model.setPassword(password);
-                        model.setImageuri(imageUri.toString());
+                        model.setProfilePic(imageUri.toString());
                         String id = task.getResult().getUser().getUid();
 
                         firebaseDatabase.getReference().child("Users").child(id).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -267,11 +265,11 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = auth.getCurrentUser();
-                            AuthModel users = new AuthModel();
-                            users.setUserid(user.getUid());
-                            users.setUsername(user.getDisplayName());
+                            Users users = new Users();
+                            users.setUserId(user.getUid());
+                            users.setUserName(user.getDisplayName());
                             users.setEmail(user.getEmail());
-                            users.setImageuri(user.getPhotoUrl().toString());
+                            users.setProfilePic(user.getPhotoUrl().toString());
                             firebaseDatabase.getReference().child("Users").child(user.getUid()).setValue(users);
 
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -284,6 +282,5 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
                     }
                 });
     }
-
 
 }
