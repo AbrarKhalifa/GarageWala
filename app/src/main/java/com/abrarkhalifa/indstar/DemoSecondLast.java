@@ -1,4 +1,4 @@
 package com.abrarkhalifa.indstar;
 
-public class demo_last {
+public class DemoSecondLast {
 }
