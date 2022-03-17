@@ -89,7 +89,7 @@ public class myAccount extends AppCompatActivity {
             Uri sFile = data.getData();
             binding.user.setImageURI(sFile);
 
-            final StorageReference reference = storage.getReference().child("Profile_Picture").child(FirebaseAuth.getInstance().getUid());
+            final StorageReference reference = storage.getReference().child("ProfilePic").child(FirebaseAuth.getInstance().getUid());
             reference.putFile(sFile).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(@NonNull UploadTask.TaskSnapshot taskSnapshot) {

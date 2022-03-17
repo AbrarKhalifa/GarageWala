@@ -172,14 +172,14 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 View headerView = nav.getHeaderView(0);
-                ImageView img = headerView.findViewById(R.id.profileImage);
+                ImageView img = findViewById(R.id.profileImage);
                 TextView tv = (TextView) headerView.findViewById(R.id.username);
 
                 String usr = tv.toString();
                 Users users  = snapshot.getValue(Users.class);
                 Picasso.get()
                         .load(users.getProfilePic())
-                        .placeholder(R.drawable.ic_male_user)
+                        .placeholder(R.drawable.users_profile)
                         .into(img);
 
                 HashMap<String, Object> obj = new HashMap<>();
