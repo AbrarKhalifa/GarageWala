@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:backgroundTint="#959AB8"
+    android:backgroundTint="#030304"
     tools:context=".fragmentes.garage_home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:backgroundTint="#028A09"
+            android:drawableLeft="@drawable/ic_call"
+            android:text="Emergency Call"
+
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:backgroundTint="#B10C0C"
+            android:layout_marginLeft="4dp"
+            android:text="Emergency REqu..."
+            app:cornerRadius="10dp" />
+
+
+    </LinearLayout>
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp" />
 
 </FrameLayout>

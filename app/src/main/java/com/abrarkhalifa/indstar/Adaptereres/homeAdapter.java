@@ -1,6 +1,7 @@
 package com.abrarkhalifa.indstar.Adaptereres;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import android.view.LayoutInflater;
         import androidx.annotation.NonNull;
         import androidx.recyclerview.widget.RecyclerView;
 
+import com.abrarkhalifa.indstar.MainActivity;
 import com.abrarkhalifa.indstar.R;
 import com.abrarkhalifa.indstar.model.DataModelHome;
 
@@ -54,12 +56,14 @@ public class homeAdapter extends RecyclerView.Adapter<homeAdapter.homie> {
         holder.sendReq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Toast.makeText(v.getContext(), "Sending Request", Toast.LENGTH_SHORT).show();
             }
         });
         holder.map.setImageResource(dataHolder.get(position).getMap());
         holder.chat.setImageResource(dataHolder.get(position).getChat());
         holder.downArrow.setImageResource(dataHolder.get(position).getDownArrow());
+
 
     }
 
