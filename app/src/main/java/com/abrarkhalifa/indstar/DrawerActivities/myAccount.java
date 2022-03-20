@@ -44,6 +44,16 @@ public class myAccount extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
 
 
+        setSupportActionBar(binding.toolbar2);
+        if(getSupportActionBar()!= null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        binding.toolbar2.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
 
         database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
