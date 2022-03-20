@@ -27,4 +27,17 @@
         <!-- Customize your theme here. -->
 
     </style>
+
+    <style name="Theme.INDSTAR.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.INDSTAR.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.INDSTAR.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="toolbarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="colorControlNormal">@color/black</item>
+    </style>
 </resources>

@@ -2,6 +2,7 @@ package com.abrarkhalifa.indstar.Adaptereres;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ import android.view.LayoutInflater;
 
 import com.abrarkhalifa.indstar.MainActivity;
 import com.abrarkhalifa.indstar.R;
+import com.abrarkhalifa.indstar.countDown;
 import com.abrarkhalifa.indstar.model.DataModelHome;
 
 import org.w3c.dom.Text;
@@ -35,6 +37,7 @@ import org.w3c.dom.Text;
 
 public class homeAdapter extends RecyclerView.Adapter<homeAdapter.homie> {
     ArrayList<DataModelHome> dataHolder;
+    Class<countDown> context;
 
     public homeAdapter(ArrayList<DataModelHome> dataHolder) {
         this.dataHolder = dataHolder;
@@ -58,8 +61,13 @@ public class homeAdapter extends RecyclerView.Adapter<homeAdapter.homie> {
             public void onClick(View v) {
 
                 Toast.makeText(v.getContext(), "Sending Request", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), countDown.class);
+                v.getContext().startActivity(intent);
+
             }
         });
+
+
         holder.map.setImageResource(dataHolder.get(position).getMap());
         holder.chat.setImageResource(dataHolder.get(position).getChat());
         holder.downArrow.setImageResource(dataHolder.get(position).getDownArrow());

@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void showBottomSheetDialog() {
+    public void showBottomSheetDialog() {
 
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.bottom_sheet_layout);
