@@ -2,12 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
+        android:background="@android:color/transparent"
+        app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -15,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#1E1E1E"
+            android:background="@drawable/bottomsheet_background"
             android:orientation="vertical">
 
             <ImageView
@@ -26,12 +28,58 @@
                 app:srcCompat="@drawable/back_arrow" />
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
+                android:id="@+id/change_theme"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="Change Theme"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:drawableStartCompat="@drawable/change_theme" />
+
+            <TextView
+                android:id="@+id/rate_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:drawablePadding="10dp"
+                android:gravity="center"
                 android:text="Rate Our Services"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="20sp"
+                app:drawableStartCompat="@drawable/rate" />
+
+            <TextView
+                android:id="@+id/languges_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="Languages"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:drawableStartCompat="@drawable/languages" />
+
+            <TextView
+                android:id="@+id/help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="Help Us to Improve"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:drawableStartCompat="@drawable/help_support"
+                app:drawableTint="#FFFFFF" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

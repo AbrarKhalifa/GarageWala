@@ -232,12 +232,46 @@ public class MainActivity extends AppCompatActivity {
         bottomSheetDialog.setContentView(R.layout.bottom_sheet_layout);
 
         ImageView back = bottomSheetDialog.findViewById(R.id.backBtn);
+        TextView changeTheme = bottomSheetDialog.findViewById(R.id.change_theme);
+        TextView rate = bottomSheetDialog.findViewById(R.id.rate_services);
+        TextView languages = bottomSheetDialog.findViewById(R.id.languges_txt);
+        TextView help = bottomSheetDialog.findViewById(R.id.help);
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                bottomSheetDialog.dismiss();
             }
         });
+
+        changeTheme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Change Theme", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Rate Our Services", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        languages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Choose Languages", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Help Us to Improve", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         bottomSheetDialog.show();
     }
