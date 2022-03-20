@@ -25,6 +25,17 @@
         android:background="@drawable/background_border"
         app:titleTextColor="@color/color_desire_font">
 
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/menu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_gravity="right"
+            android:layout_marginRight="20sp"
+            android:src="@drawable/ic_menu_vertical"
+            />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/toolbarLogo"
             android:layout_width="40dp"
@@ -34,6 +45,7 @@
             android:layout_marginRight="20sp"
             android:src="@drawable/garagewala_logo_foreground"
             />
+
 
     </androidx.appcompat.widget.Toolbar>
 

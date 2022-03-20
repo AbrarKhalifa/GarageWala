@@ -26,6 +26,7 @@ import com.abrarkhalifa.indstar.fragmentes.track_record;
 import com.abrarkhalifa.indstar.fragmentes.transaction_histories;
 import com.abrarkhalifa.indstar.model.Users;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -75,6 +76,13 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+
+        binding.menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showBottomSheetDialog();
+            }
+        });
 
         meowBottomNavigation = findViewById(R.id.bottom_navigation);
 
@@ -216,5 +224,21 @@ public class MainActivity extends AppCompatActivity {
         } catch(Exception e) {
             //e.toString();
         }
+    }
+
+    private void showBottomSheetDialog() {
+
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.bottom_sheet_layout);
+
+        ImageView back = bottomSheetDialog.findViewById(R.id.backBtn);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        bottomSheetDialog.show();
     }
 }
