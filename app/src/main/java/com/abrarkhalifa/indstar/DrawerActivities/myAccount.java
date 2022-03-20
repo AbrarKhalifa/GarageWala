@@ -89,14 +89,14 @@ public class myAccount extends AppCompatActivity {
             Uri sFile = data.getData();
             binding.user.setImageURI(sFile);
 
-            final StorageReference reference = storage.getReference().child("ProfilePic").child(FirebaseAuth.getInstance().getUid());
+            final StorageReference reference = storage.getReference().child("Images").child(FirebaseAuth.getInstance().getUid());
             reference.putFile(sFile).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
                     reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(@NonNull Uri uri) {
-                            database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("ProfilePic").setValue(uri.toString());
+                            database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Images").setValue(sFile.toString());
                             Toast.makeText(getApplicationContext(), "profile picture updated", Toast.LENGTH_SHORT).show();
 
                         }

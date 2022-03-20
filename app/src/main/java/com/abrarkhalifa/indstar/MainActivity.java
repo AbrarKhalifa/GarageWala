@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 View headerView = nav.getHeaderView(0);
-                ImageView img = findViewById(R.id.profileImage);
+                ImageView img = headerView.findViewById(R.id.profileImage);
                 TextView tv = (TextView) headerView.findViewById(R.id.username);
 
                 String usr = tv.toString();
@@ -184,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
 
                 HashMap<String, Object> obj = new HashMap<>();
                 obj.get(usr);
+                assert users != null;
                 tv.setText(users.getUserName());
             }
 
