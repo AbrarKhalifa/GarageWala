@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.share:
-                        Toast.makeText(getApplicationContext(), "Share With Others", Toast.LENGTH_SHORT).show();
+                        shareApp();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.help:
@@ -203,7 +203,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
+    private void shareApp(){
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "GarageWala");
+            String shareMessage= "\nLet me recommend you this application\n\n";
+            shareMessage = shareMessage + "https://drive.google.com/file/d/1i1xGRJxF5XyzledoI2HoVOQAZTt9gN5H/view?usp=sharing"
+                    + BuildConfig.APPLICATION_ID +"\n\n";
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+            startActivity(Intent.createChooser(shareIntent, "choose one"));
+        } catch(Exception e) {
+            //e.toString();
+        }
+    }
 }
