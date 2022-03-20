@@ -26,6 +26,7 @@ import com.abrarkhalifa.indstar.fragmentes.track_record;
 import com.abrarkhalifa.indstar.fragmentes.transaction_histories;
 import com.abrarkhalifa.indstar.model.Users;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -75,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        binding.menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showBottomSheetDialog();
+            }
+        });
 
         meowBottomNavigation = findViewById(R.id.bottom_navigation);
 
@@ -148,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.share:
-                        Toast.makeText(getApplicationContext(), "Share With Others", Toast.LENGTH_SHORT).show();
+                        shareApp();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.help:
@@ -202,7 +209,69 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void showBottomSheetDialog() {
+
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.bottom_sheet_layout);
+
+        ImageView back = bottomSheetDialog.findViewById(R.id.backBtn);
+        TextView changeTheme = bottomSheetDialog.findViewById(R.id.change_theme);
+        TextView rate = bottomSheetDialog.findViewById(R.id.rate_services);
+        TextView languages = bottomSheetDialog.findViewById(R.id.languges_txt);
+        TextView help = bottomSheetDialog.findViewById(R.id.help);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        changeTheme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Change Theme", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Rate Our Services", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        languages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Choose Languages", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Help Us to Improve", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
+        bottomSheetDialog.show();
+    }
+
+    private void shareApp(){
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "GarageWala");
+            String shareMessage= "\nLet me recommend you this application\n\n";
+            shareMessage = shareMessage + "https://drive.google.com/file/d/1i1xGRJxF5XyzledoI2HoVOQAZTt9gN5H/view?usp=sharing"
+                    + BuildConfig.APPLICATION_ID +"\n\n";
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+            startActivity(Intent.createChooser(shareIntent, "choose one"));
+        } catch(Exception e) {
+            //e.toString();
+        }
+    }
 
 }
