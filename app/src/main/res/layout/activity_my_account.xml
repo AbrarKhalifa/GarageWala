@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_desire_font"
+    android:background="@color/black"
+    android:padding="10dp"
     tools:context=".DrawerActivities.myAccount">
-
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -18,8 +18,7 @@
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:srcCompat="@drawable/users_profile"
-        />
+        app:srcCompat="@drawable/ic_male_user" />
 
     <ImageView
         android:id="@+id/user_add"
@@ -31,6 +30,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/user"
         app:srcCompat="@drawable/img_add"
+        app:tint="#FFFFFF"
         tools:ignore="OnClick" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -54,6 +54,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="216dp"
         android:text="Email Address :"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/user" />
 
@@ -62,8 +64,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="72dp"
-        android:text="change Password :"
+        android:layout_marginTop="32dp"
+        android:text="Change Password :"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/show_mail" />
 
@@ -73,9 +77,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:paddingLeft="0dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
         android:text="abrarkhalifa62@gmail.com"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -84,15 +89,35 @@
     <EditText
         android:id="@+id/change_password_et"
         android:layout_width="365dp"
-        android:layout_height="39dp"
+        android:layout_height="48dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/change_pass_edt"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/change_password_tv"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:backgroundTint="#3F51B5"
+        android:padding="15dp"
+        android:text="Update Password"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/change_password_et"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
