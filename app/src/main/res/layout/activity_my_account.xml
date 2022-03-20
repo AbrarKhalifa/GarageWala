@@ -9,11 +9,25 @@
     tools:context=".DrawerActivities.myAccount">
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:theme="@style/ToolbarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="#FFFFFF"
+        app:titleTextColor="#FFFFFF" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="41dp" />
+        app:layout_constraintGuide_begin="84dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -113,6 +127,7 @@
         android:backgroundTint="#3F51B5"
         android:padding="15dp"
         android:text="Update Password"
+        android:textColor="#FFFFFF"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
