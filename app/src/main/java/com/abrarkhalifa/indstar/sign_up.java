@@ -155,7 +155,56 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
         String username = binding.usernameSignup.getText().toString();
         String email = binding.emailSignup.getText().toString();
         String password = binding.passwordSignup.getText().toString();
-      if (!TextUtils.isEmpty(username) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(password) ){
+        if (!TextUtils.isEmpty(username) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(password) ) {
+
+            auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Users model = new Users();
+                        model.setUserName(username);
+                        model.setEmail(email);
+                        model.setPassword(password);
+                        String id = task.getResult().getUser().getUid();
+
+                        firebaseDatabase.getReference().child("Users").child(id).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                binding.progressbar.setVisibility(View.INVISIBLE);
+                                binding.usernameSignup.setText("");
+                                binding.emailSignup.setText("");
+                                binding.passwordSignup.setText("");
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
+                                Toast.makeText(sign_up.this, "Successfully signup", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                binding.progressbar.setVisibility(View.INVISIBLE);
+
+                                Toast.makeText(sign_up.this, "signup failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    binding.progressbar.setVisibility(View.INVISIBLE);
+                    Toast.makeText(sign_up.this, "failed to upload", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
+
+
+
+
+        }
+        else if (!TextUtils.isEmpty(username) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(password) ){
             binding.progressbar.setVisibility(View.VISIBLE);
 
             storageReference = firebaseStorage.getReference("Images/"+System.currentTimeMillis()+"."+getExtention());
@@ -200,7 +249,6 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
                                 Toast.makeText(sign_up.this, "signup failed", Toast.LENGTH_SHORT).show();
                             }
                         });
-
 
 
                     }
@@ -265,7 +313,6 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = auth.getCurrentUser();
@@ -283,7 +330,6 @@ public class sign_up extends AppCompatActivity implements View.OnClickListener {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(sign_up.this, "signInWithCredential:failed", Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 });
     }
