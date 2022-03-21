@@ -2,6 +2,7 @@ package com.abrarkhalifa.indstar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -40,6 +41,15 @@ public class countDown extends AppCompatActivity {
 
         setRestProgressBar();
 
+        binding.btnCancelReq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
     private void setRestProgressBar(){
@@ -58,7 +68,6 @@ public class countDown extends AppCompatActivity {
 
             }
         },500);
-
 
     }
 
