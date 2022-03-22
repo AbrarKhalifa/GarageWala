@@ -1,7 +1,6 @@
 package com.abrarkhalifa.indstar.Adaptereres;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,25 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Button;
-        import android.widget.ImageView;
-        import android.widget.TextView;
-        import android.widget.Toast;
 
-        import androidx.annotation.NonNull;
-        import androidx.recyclerview.widget.RecyclerView;
-
-import com.abrarkhalifa.indstar.MainActivity;
 import com.abrarkhalifa.indstar.R;
 import com.abrarkhalifa.indstar.countDown;
+import com.abrarkhalifa.indstar.map;
 import com.abrarkhalifa.indstar.model.DataModelHome;
-
-import org.w3c.dom.Text;
-
-        import java.util.ArrayList;
 
 public class homeAdapter extends RecyclerView.Adapter<homeAdapter.homie> {
     ArrayList<DataModelHome> dataHolder;
@@ -64,6 +49,14 @@ public class homeAdapter extends RecyclerView.Adapter<homeAdapter.homie> {
                 Intent intent = new Intent(v.getContext(), countDown.class);
                 v.getContext().startActivity(intent);
 
+            }
+        });
+
+        holder.map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), map.class);
+                v.getContext().startActivity(intent);
             }
         });
 

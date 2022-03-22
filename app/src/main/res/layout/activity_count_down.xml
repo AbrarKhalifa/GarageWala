@@ -13,6 +13,7 @@
         android:id="@+id/toolbarExcercise"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
+        app:title="Request Status"
         android:theme="@style/toolbarTheme"
         app:titleTextColor="@color/black"
         android:layout_height="?android:attr/actionBarSize"

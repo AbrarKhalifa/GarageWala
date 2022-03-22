@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -56,6 +57,9 @@ dependencies {
 
     implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
     implementation 'androidx.navigation:navigation-fragment:2.4.1'
+
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
 
 
 

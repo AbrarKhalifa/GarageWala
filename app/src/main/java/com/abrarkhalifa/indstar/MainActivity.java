@@ -9,6 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     FrameLayout frameLayout;
+
+
+    long onBackPressTime;
 
 
     @Override
@@ -274,4 +279,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    public void onBackPressed() {
+        if (onBackPressTime + 2000 > System.currentTimeMillis() ){
+             super.onBackPressed();
+             finish();
+        }else {
+            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
+        }
+
+        onBackPressTime = System.currentTimeMillis();
+
+    }
 }

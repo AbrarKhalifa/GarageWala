@@ -36,6 +36,7 @@ public class countDown extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+                finish();
             }
         });
 
@@ -46,7 +47,7 @@ public class countDown extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
-                finish();
+               finish();
             }
         });
 

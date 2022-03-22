@@ -1,7 +1,13 @@
 package com.abrarkhalifa.indstar.fragmentes;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,6 +15,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.abrarkhalifa.indstar.R;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +47,10 @@ public class track_record extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    FusedLocationProviderClient client;
+    SupportMapFragment smf;
 
     public track_record() {
         // Required empty public constructor
@@ -61,6 +87,34 @@ public class track_record extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_track_record, container, false);
+        View view = inflater.inflate(R.layout.fragment_track_record, container, false);
+        smf = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.google_track_map);
+
+
+
+                smf.getMapAsync(new OnMapReadyCallback() {
+                    @Override
+                    public void onMapReady(@NonNull GoogleMap googleMap) {
+                        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                            @Override
+                            public void onMapClick(@NonNull LatLng latLng) {
+                                MarkerOptions markerOptions = new MarkerOptions();
+                                markerOptions.position(latLng);
+
+                                markerOptions.title(latLng.latitude + " : " + latLng.longitude);
+
+                                googleMap.clear();
+
+                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
+                                googleMap.addMarker(markerOptions);
+
+                            }
+                        });
+                    }
+                });
+
+        return view;
     }
+
+
 }

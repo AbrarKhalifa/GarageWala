@@ -7,12 +7,11 @@
     tools:context=".fragmentes.track_record">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <fragment
+        android:id="@+id/google_track_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:textSize="35dp"
-        android:text="Track Your Mechanic"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        />
 
 </FrameLayout>
